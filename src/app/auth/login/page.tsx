@@ -55,7 +55,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-50 px-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">Welcome back</CardTitle>
@@ -105,13 +105,6 @@ export default function LoginPage() {
                 Sign up
               </Link>
             </p>
-            <div className="pt-4 border-t">
-              <p className="text-xs text-center text-gray-500">
-                <strong>Test credentials:</strong><br />
-                Email: test@devlog.com<br />
-                Password: password123
-              </p>
-            </div>
           </CardFooter>
         </form>
       </Card>
