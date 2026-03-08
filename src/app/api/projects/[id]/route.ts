@@ -43,7 +43,6 @@ export async function GET(
     const formattedProject = {
       ...project,
       techStack: parseJSON<string[]>(project.techStack, []),
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       entries: project.entries.map((entry: any) => ({
         ...entry,
         tags: parseJSON<string[]>(entry.tags, []),

@@ -27,7 +27,6 @@ export async function GET() {
       orderBy: { date: 'desc' },
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const currentStreak = calculateStreak(allEntries.map((e: any) => e.date));
 
     // Get activity data for last 8 weeks
@@ -50,7 +49,6 @@ export async function GET() {
       activityMap.set(weekLabel, 0);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     entriesForActivity.forEach((entry: any) => {
       const weekLabel = format(startOfWeek(new Date(entry.date)), 'MMM dd');
       const count = activityMap.get(weekLabel) || 0;
@@ -69,7 +67,6 @@ export async function GET() {
     });
 
     const tagCounts = new Map<string, number>();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     allEntriesWithTags.forEach((entry: any) => {
       const tags = parseJSON<string[]>(entry.tags, []);
       tags.forEach(tag => {

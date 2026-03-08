@@ -36,7 +36,6 @@ export async function GET(request: NextRequest) {
     });
 
     // Parse JSON strings to arrays
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const formattedProjects = projects.map((project: any) => ({
       ...project,
       techStack: parseJSON<string[]>(project.techStack, []),
